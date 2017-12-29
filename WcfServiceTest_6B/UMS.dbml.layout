@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="UMS">
+  <DataContextMoniker Name="/UMSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="33a8b8c6-cd6b-4079-bac3-b7684c952a95" absoluteBounds="0.75, 0.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/UMSDataContext/Course" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25b5eee6-2b97-4974-befb-febb3df9bff6" absoluteBounds="0.765, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="850c59a4-b465-4138-99b5-308e21b61d4f" absoluteBounds="3.5, 0.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/UMSDataContext/TeacherCourse" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19f17090-fb97-4c75-a3c5-6e69b0dbd662" absoluteBounds="3.515, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="62f3dd0f-1d0c-4360-9440-ef40689d3b0e" absoluteBounds="0.75, 4.875, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/UMSDataContext/Teacher" />
+      <nestedChildShapes>
+        <elementListCompartment Id="496988d4-3c6c-4a90-bf39-a264054e9f51" absoluteBounds="0.765, 5.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.56814697265625); (3.5 : 1.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UMSDataContext/Course/Course_TeacherCourse" />
+      <nodes>
+        <classShapeMoniker Id="33a8b8c6-cd6b-4079-bac3-b7684c952a95" />
+        <classShapeMoniker Id="850c59a4-b465-4138-99b5-308e21b61d4f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.14505126953125); (4.5 : 6.14505126953125); (4.5 : 2.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/UMSDataContext/Teacher/Teacher_TeacherCourse" />
+      <nodes>
+        <classShapeMoniker Id="62f3dd0f-1d0c-4360-9440-ef40689d3b0e" />
+        <classShapeMoniker Id="850c59a4-b465-4138-99b5-308e21b61d4f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

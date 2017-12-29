@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UMS" Class="UMSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SMILE-PC\MSSQLSERVERSMILE;Initial Catalog=UMS;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="UMSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Course" Member="Courses">
+    <Type Name="Course">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Course_TeacherCourse" Member="TeacherCourses" ThisKey="id" OtherKey="CourseID" Type="TeacherCourse" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TeacherCourse" Member="TeacherCourses">
+    <Type Name="TeacherCourse">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TeacherID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Course_TeacherCourse" Member="Course" ThisKey="CourseID" OtherKey="id" Type="Course" IsForeignKey="true" />
+      <Association Name="Teacher_TeacherCourse" Member="Teacher" ThisKey="TeacherID" OtherKey="id" Type="Teacher" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Teacher" Member="Teachers">
+    <Type Name="Teacher">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Designation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ContactNumber" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Teacher_TeacherCourse" Member="TeacherCourses" ThisKey="id" OtherKey="TeacherID" Type="TeacherCourse" />
+    </Type>
+  </Table>
+</Database>
